@@ -12,6 +12,3 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 - Brian Hong: bh9232
 - Jeffrey Li: lijeffrey02
 - Samuel Fang: SamuelFang
-
-### Progress
-Link to deployed page: <br/>
