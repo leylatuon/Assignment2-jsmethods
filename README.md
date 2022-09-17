@@ -5,7 +5,7 @@
 - Samuel Fang: SamuelFang
 
 ### Progress
-Link to deployed page: https://leylatuon.github.io/Assignment1-Zoo/ <br/>
+Link to deployed page: <br/>
 
 # javascript-methods-starter-template-code
 Starter template code for Assignment 2 - JavaScript Methods. 
