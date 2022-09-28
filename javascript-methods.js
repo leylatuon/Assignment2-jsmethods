@@ -15,7 +15,15 @@ Array.prototype.myMap = function(callbackFn) {
 
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+  let arr = [];
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === undefined) continue;
+    let result = callbackFn(this[i], i, this);
+    if(result){
+      arr.push(this[i]);
+    }
+  }
+  return arr;
 };
 
 // SOME //
@@ -57,3 +65,9 @@ Object.myKeys = function(object) {
 Object.myValues = function(object) {
   // Place your code here.
 };
+
+// TEST //
+let arr = [1,2,,4];
+console.log("testing 1 parameter");
+console.log(arr.myFilter(x => x%2 === 0));
+console.log(arr.filter(x => x%2 === 0));
