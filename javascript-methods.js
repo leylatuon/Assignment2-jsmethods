@@ -28,13 +28,16 @@ Array.prototype.mySome = function(callbackFn) {
 
 // EVERY //
 Array.prototype.myEvery = function(callbackFn) {
-  // Place your code here.
+  for(let i = 0; i < this.length ; i++){
+    if(this[i] === undefined || !callbackFn(this[i], i, this)) return false;
+  } 
+  return true;
 };
 
 // REDUCE //
 Array.prototype.myReduce = function(callbackFn) {
   // Place your code here.
-};
+};s
 
 // INCLUDES //
 Array.prototype.myIncludes = function(searchElement) {
