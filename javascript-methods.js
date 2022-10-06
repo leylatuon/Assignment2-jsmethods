@@ -35,8 +35,14 @@ Array.prototype.myReduce = function(callbackFn) {
 
 // INCLUDES //
 Array.prototype.myIncludes = function(searchElement) {
-  // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] == searchElement){
+      return true;
+    }
+  }
+  return false;
 };
+
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement) {
