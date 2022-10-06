@@ -65,3 +65,6 @@ Object.myValues = function(object) {
 };
 
 // TEST //
+const obj = {a: "something", b: "", c: false};
+console.log(Object.myValues(obj));
+console.log(Object.values(obj));
