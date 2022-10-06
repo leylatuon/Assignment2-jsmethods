@@ -17,7 +17,6 @@ Array.prototype.myMap = function(callbackFn) {
 Array.prototype.myFilter = function(callbackFn) {
   let arr = [];
   for (let i = 0; i < this.length; i++) {
-    // if (this[i] === undefined) continue;
     let result = callbackFn(this[i], i, this);
     if(result){
       arr.push(this[i]);
@@ -67,10 +66,10 @@ Object.myValues = function(object) {
 };
 
 // TEST //
-let arr = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+let arr = ['apple', 'banana', '', 'mango', 'orange'];
 const filter1 = arr.myFilter(function(el){
-  if(el.includes("ap")) return el;
+  if(el.includes(undefined)) return el;
 });
-const filter2 = arr.filter(x => x.includes("ap"));
+const filter2 = arr.filter(x => x.includes(undefined));
 console.log(filter1);
 console.log(filter2);
