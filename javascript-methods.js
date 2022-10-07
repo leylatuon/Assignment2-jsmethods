@@ -61,11 +61,11 @@ Object.myKeys = function(object) {
 
 // VALUES //
 Object.myValues = function(object) {
-  // Place your code here.
+  const arr = [];
+  for (const key in object) {
+    if(object.hasOwnProperty(key)){
+      arr.push(object[key]);
+    }
+  }
+  return arr;
 };
-
-// TEST //
-console.log([1, , undefined].myFilter((x) => x === undefined)); // [undefined]
-console.log([1, , undefined].filter((x) => x === undefined)); // [undefined]
-console.log([1, , undefined].myFilter((x) => x !== 2)); // [1, undefined]
-console.log([1, , undefined].filter((x) => x !== 2)); // [1, undefined]
