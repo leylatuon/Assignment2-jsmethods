@@ -9,15 +9,20 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 ----------------------------------------------------------*/
 
 // MAP //
-Array.prototype.myMap = function(callbackFn) {
-  // Place your code here.
+Array.prototype.myMap = function (callbackFn) {
+  const arr = [];
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === undefined) continue;
+    arr[i] = callbackFn(this[i], i, this);
+  }
+  return arr;
 };
 
 // FILTER //
-Array.prototype.myFilter = function(callbackFn) {
+Array.prototype.myFilter = function (callbackFn) {
   let arr = [];
   for (let i = 0; i < this.length; i++) {
-    if(callbackFn(this[i], i ,this)){
+    if (callbackFn(this[i], i, this)) {
       arr.push(this[i]);
     }
   }
@@ -25,45 +30,45 @@ Array.prototype.myFilter = function(callbackFn) {
 };
 
 // SOME //
-Array.prototype.mySome = function(callbackFn) {
+Array.prototype.mySome = function (callbackFn) {
   // Place your code here.
 };
 
 // EVERY //
-Array.prototype.myEvery = function(callbackFn) {
+Array.prototype.myEvery = function (callbackFn) {
   // Place your code here.
 };
 
 // REDUCE //
-Array.prototype.myReduce = function(callbackFn) {
+Array.prototype.myReduce = function (callbackFn) {
   // Place your code here.
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function(searchElement) {
+Array.prototype.myIncludes = function (searchElement) {
   // Place your code here.
 };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function(searchElement) {
+Array.prototype.myIndexOf = function (searchElement) {
   // Place your code here.
 };
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function(searchElement) {
+Array.prototype.myLastIndexOf = function (searchElement) {
   // Place your code here.
 };
 
 // KEYS //
-Object.myKeys = function(object) {
+Object.myKeys = function (object) {
   // Place your code here.
 };
 
 // VALUES //
-Object.myValues = function(object) {
+Object.myValues = function (object) {
   const arr = [];
   for (const key in object) {
-    if(object.hasOwnProperty(key)){
+    if (object.hasOwnProperty(key)) {
       arr.push(object[key]);
     }
   }
