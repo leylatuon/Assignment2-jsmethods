@@ -15,7 +15,13 @@ Array.prototype.myMap = function(callbackFn) {
 
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+  let arr = [];
+  for (let i = 0; i < this.length; i++) {
+    if(callbackFn(this[i], i ,this)){
+      arr.push(this[i]);
+    }
+  }
+  return arr;
 };
 
 // SOME //
@@ -57,3 +63,9 @@ Object.myKeys = function(object) {
 Object.myValues = function(object) {
   // Place your code here.
 };
+
+// TEST //
+console.log([1, , undefined].myFilter((x) => x === undefined)); // [undefined]
+console.log([1, , undefined].filter((x) => x === undefined)); // [undefined]
+console.log([1, , undefined].myFilter((x) => x !== 2)); // [1, undefined]
+console.log([1, , undefined].filter((x) => x !== 2)); // [1, undefined]
