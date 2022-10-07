@@ -16,15 +16,10 @@ Array.prototype.myMap = function(callbackFn) {
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
   let arr = [];
-  // for (let i = 0; i < this.length; i++) {
-  //   let result = callbackFn(this[i], i, this);
-  //   if(result){
-  //     arr.push(this[i]);
-  //   }
-  // }
   for (let i = 0; i < this.length; i++) {
-    if (callbackFn.call(this[i], i, this))
+    if(callbackFn(this[i], i ,this)){
       arr.push(this[i]);
+    }
   }
   return arr;
 };
