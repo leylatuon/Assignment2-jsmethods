@@ -41,7 +41,7 @@ Array.prototype.myReduce = function (callbackFn) {
   if (this.length === 1) {
     return this[0];
   }
-  var val = this[0];
+  let val = this[0];
   for (let i = 0; i < this.length; i++) {
     if (this[i] === undefined) continue;
     val = callbackFn(val, this[i]);
