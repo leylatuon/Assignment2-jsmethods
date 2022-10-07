@@ -55,16 +55,5 @@ Object.myKeys = function(object) {
 
 // VALUES //
 Object.myValues = function(object) {
-  const arr = [];
-  for (const key in object) {
-    if(object.hasOwnProperty(key)){
-      arr.push(object[key]);
-    }
-  }
-  return arr;
+  // Place your code here.
 };
-
-// TEST //
-const obj = {a: "something", b: "", c: false};
-console.log(Object.myValues(obj));
-console.log(Object.values(obj));
