@@ -16,11 +16,15 @@ Array.prototype.myMap = function(callbackFn) {
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
   let arr = [];
+  // for (let i = 0; i < this.length; i++) {
+  //   let result = callbackFn(this[i], i, this);
+  //   if(result){
+  //     arr.push(this[i]);
+  //   }
+  // }
   for (let i = 0; i < this.length; i++) {
-    let result = callbackFn(this[i], i, this);
-    if(result){
+    if (callbackFn.call(this[i], i, this))
       arr.push(this[i]);
-    }
   }
   return arr;
 };
@@ -66,10 +70,7 @@ Object.myValues = function(object) {
 };
 
 // TEST //
-let arr = ['apple', 'banana', '', 'mango', 'orange'];
-const filter1 = arr.myFilter(function(el){
-  if(el.includes(undefined)) return el;
-});
-const filter2 = arr.filter(x => x.includes(undefined));
-console.log(filter1);
-console.log(filter2);
+console.log([1, , undefined].myFilter((x) => x === undefined)); // [undefined]
+console.log([1, , undefined].filter((x) => x === undefined)); // [undefined]
+console.log([1, , undefined].myFilter((x) => x !== 2)); // [1, undefined]
+console.log([1, , undefined].filter((x) => x !== 2)); // [1, undefined]
