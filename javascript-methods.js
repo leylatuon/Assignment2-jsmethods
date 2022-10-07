@@ -20,7 +20,13 @@ Array.prototype.myMap = function (callbackFn) {
 
 // FILTER //
 Array.prototype.myFilter = function (callbackFn) {
-  // Place your code here.
+  let arr = [];
+  for (let i = 0; i < this.length; i++) {
+    if (callbackFn(this[i], i, this)) {
+      arr.push(this[i]);
+    }
+  }
+  return arr;
 };
 
 // SOME //
@@ -60,5 +66,11 @@ Object.myKeys = function (object) {
 
 // VALUES //
 Object.myValues = function (object) {
-  // Place your code here.
+  const arr = [];
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      arr.push(object[key]);
+    }
+  }
+  return arr;
 };
