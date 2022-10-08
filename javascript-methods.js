@@ -9,13 +9,24 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 ----------------------------------------------------------*/
 
 // MAP //
-Array.prototype.myMap = function(callbackFn) {
-  // Place your code here.
+Array.prototype.myMap = function (callbackFn) {
+  const arr = [];
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === undefined) continue;
+    arr[i] = callbackFn(this[i], i, this);
+  }
+  return arr;
 };
 
 // FILTER //
-Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+Array.prototype.myFilter = function (callbackFn) {
+  let arr = [];
+  for (let i = 0; i < this.length; i++) {
+    if (callbackFn(this[i], i, this)) {
+      arr.push(this[i]);
+    }
+  }
+  return arr;
 };
 
 // SOME //
@@ -38,28 +49,83 @@ Array.prototype.myEvery = function(callbackFn) {
 Array.prototype.myReduce = function(callbackFn) {
   // Place your code here.
 };s
+=======
+Array.prototype.mySome = function (callbackFn) {
+  // Place your code here.
+};
+
+// EVERY //
+Array.prototype.myEvery = function (callbackFn) {
+  // Place your code here.
+};
+
+// REDUCE //
+Array.prototype.myReduce = function (callbackFn) {
+  if (this.length === 0) {
+    throw new TypeError("reduce of empty array with no initial value");
+  }
+  if (this.length === 1) {
+    return this[0];
+  }
+  let val = this[0];
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === undefined) continue;
+    val = callbackFn(val, this[i]);
+  }
+  return val;
+};
 
 // INCLUDES //
 Array.prototype.myIncludes = function(searchElement) {
-  // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] == searchElement){
+      return true;
+    }
+  }
+  return false;
 };
+
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement) {
-  // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] == searchElement){
+      return i;
+    }
+  }
+  return -1;
 };
+
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(searchElement) {
-  // Place your code here.
+  for (let i = this.length - 1; i >= 0; i--) {
+    if (this[i] == searchElement){
+      return i;
+    }
+  }
+  return -1;
 };
 
+
 // KEYS //
-Object.myKeys = function(object) {
-  // Place your code here.
+Object.myKeys = function (object) {
+  Object.myKeys = function (object) {
+    const arr = [];
+    for (const i in object) {
+      arr.push(i);
+    }
+    return arr;
+  };
 };
 
 // VALUES //
-Object.myValues = function(object) {
-  // Place your code here.
+Object.myValues = function (object) {
+  const arr = [];
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      arr.push(object[key]);
+    }
+  }
+  return arr;
 };
