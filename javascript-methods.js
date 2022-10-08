@@ -46,20 +46,6 @@ Array.prototype.myEvery = function(callbackFn) {
 };
 
 // REDUCE //
-Array.prototype.myReduce = function(callbackFn) {
-  // Place your code here.
-};s
-=======
-Array.prototype.mySome = function (callbackFn) {
-  // Place your code here.
-};
-
-// EVERY //
-Array.prototype.myEvery = function (callbackFn) {
-  // Place your code here.
-};
-
-// REDUCE //
 Array.prototype.myReduce = function (callbackFn) {
   if (this.length === 0) {
     throw new TypeError("reduce of empty array with no initial value");
