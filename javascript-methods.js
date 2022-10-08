@@ -56,19 +56,37 @@ Array.prototype.myReduce = function (callbackFn) {
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function (searchElement) {
-  // Place your code here.
+Array.prototype.myIncludes = function(searchElement) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] == searchElement){
+      return true;
+    }
+  }
+  return false;
 };
+
 
 // INDEXOF //
-Array.prototype.myIndexOf = function (searchElement) {
-  // Place your code here.
+Array.prototype.myIndexOf = function(searchElement) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] == searchElement){
+      return i;
+    }
+  }
+  return -1;
 };
 
+
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function (searchElement) {
-  // Place your code here.
+Array.prototype.myLastIndexOf = function(searchElement) {
+  for (let i = this.length - 1; i >= 0; i--) {
+    if (this[i] == searchElement){
+      return i;
+    }
+  }
+  return -1;
 };
+
 
 // KEYS //
 Object.myKeys = function (object) {
