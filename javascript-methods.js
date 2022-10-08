@@ -30,6 +30,26 @@ Array.prototype.myFilter = function (callbackFn) {
 };
 
 // SOME //
+Array.prototype.mySome = function(callbackFn) {
+  for(let i = 0; i < this.length ; i++){
+    if(this[i] != undefined && callbackFn(this[i], i, this)) return true;
+  } 
+  return false;
+};
+
+// EVERY //
+Array.prototype.myEvery = function(callbackFn) {
+  for(let i = 0; i < this.length ; i++){
+    if(this[i] === undefined || !callbackFn(this[i], i, this)) return false;
+  } 
+  return true;
+};
+
+// REDUCE //
+Array.prototype.myReduce = function(callbackFn) {
+  // Place your code here.
+};s
+=======
 Array.prototype.mySome = function (callbackFn) {
   // Place your code here.
 };
